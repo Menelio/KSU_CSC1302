@@ -34,7 +34,7 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     	}
     }
     //print out array
-    
+    System.out.println();
     for(int i = 0; i < board.length;i++) {
     	for(int j = 0; j < board[0].length;j++) {
     		System.out.print(board[i][j]);
@@ -59,19 +59,16 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     			  //if current value = next value in row counter++
     			  if (values[i][j]==values[i][j+1]) {
     				  counter++;
-///////////////////////Debugging
-    				  System.out.println("Flag1"+" i= "+i+" j= "+j+" Data= "+values[i][j]+" Counter= "+counter);
-////////////////////////////////
     				    // if counter = 4 return true  
-    				    if(counter >= 4) {
+    				    if(counter >= 3) {
+    				    	System.out.println("Flag 1");
     				    	return true;
-    				    }
-    				   
+    				    }    				   
     			  }
     		  }
-    		  //reset counter for next row
-    		  counter = 0;
     	  }
+    	//reset counter for next row
+		  counter = 0;
       }
 
     counter = 0;
@@ -84,36 +81,71 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
   			  //if current value = next value in row counter++
   			  if (values[j][i]==values[j+1][i]) {
   				  counter++;
-///////////////////////Debugging
-  				  System.out.println("Flag2"+" i= "+i+" j= "+j+" Data= "+values[i][j]+" Counter= "+counter);
-////////////////////////////////
   				  // if counter = 4 return true  
-  				  if(counter >= 4) {
+  				  if(counter >= 3) {
+  					System.out.println("Flag 2");
   				  	return true;
   				  }
   			  }
   		  }
-  		  //reset counter for next row
-  		  counter = 0;
   	  }
+  	  //reset counter for next row
+  	  counter = 0;
     }
-  
-  counter = 0;
+    
+    counter = 0;
     
     
   
    // Get a column into an array
-      
+     
       
       
       
           
-        
-    // Check major diagonal (lower part)   
+           
+   //check NW diagonal
+    outerFor:
+    for(int i = 0; i <= numberOfRows;i++) {
+	   innerFor:
+	   for(int j =0; j <= numberOfColumns;i++) {
+		   //if there aren't enough rows above break innerFor and move on to next row
+		   if((i+3) > numberOfRows) {
+			   break innerFor;
+		   }
+		   //if there aren't enough columns to the right break innerFor and move on to next row
+		   if ((j+3) > numberOfColumns) {
+			   break outerFor;
+		   }
+		   //check values[i][j] for NW diagonal
+		   if(values[i][j]==values[i+1][j+1]&& values[i][j]==values[i+2][j+2]&&values[i][j]==values[i+3][j+3]) {
+			   System.out.println("Flag 3");
+			   return true; 
+		   }
+	   }
+   }
    
    
-   
-   
+  //check NE diagonal
+    outerFor:
+    for(int i = (numberOfRows-1); i >= 0;i--) {
+	   innerFor:
+	   for(int j =(numberOfColumns-1); j >= 0;i--) {
+		   //if there aren't enough rows above break innerFor and move on to next row
+		   if((i-3) < 0) {
+			   break innerFor;
+		   }
+		   //if there aren't enough columns to the right break innerFor and move on to next row
+		   if ((j-3) < 0) {
+			   break outerFor;
+		   }
+		   //check values[i][j] for NW diagonal
+		   if(values[i][j]==values[i-1][j-1]&& values[i][j]==values[i-2][j-2]&&values[i][j]==values[i-3][j-3]) {
+			   System.out.println("Flag 3");
+			   return true; 
+		   }
+	   }
+   }
    
        
     // Check major diagonal (upper part)
