@@ -22,8 +22,8 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     int[][] board = new int[numberOfRows][numberOfColumns];
     
 //////////////////////Debugging    
-    System.out.println("\n number of rows "+ (board.length+1));
-    System.out.println("\n number of column "+ (board[0].length+1)+"\n");
+    System.out.println("\n number of rows "+ (board.length));
+    System.out.println("\n number of column "+ (board[0].length)+"\n");
 ///////////////////////
     
     System.out.println("Enter the array values: ");
@@ -33,7 +33,16 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     		board[i][j] = input.nextInt();
     	}
     }
-    System.out.println(isConsecutiveFour(board));
+    //print out array
+    
+    for(int i = 0; i < board.length;i++) {
+    	for(int j = 0; j < board[0].length;j++) {
+    		System.out.print(board[i][j]);
+    	}
+    	System.out.println();
+    }
+    
+    System.out.print("\n"+isConsecutiveFour(board));
   }
 
   public static boolean isConsecutiveFour(int[][] values) {
@@ -42,26 +51,54 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
 	//counter for number of consecutive numbers
     int counter=0;
 
-    // Check rows
-      for (int i =0; i < numberOfRows;i++ ){
+    // Check rows with nested for loop
+    for (int i =0; i < numberOfRows;i++ ){
     	  for(int j = 0 ;j < numberOfColumns; j++ ) {
+    		  //if to prevent out of index exception
     		  if ((j+1) < numberOfColumns) {
+    			  //if current value = next value in row counter++
     			  if (values[i][j]==values[i][j+1]) {
     				  counter++;
 ///////////////////////Debugging
-    				  System.out.println("Flag"+" i= "+i+" j= "+j);
+    				  System.out.println("Flag1"+" i= "+i+" j= "+j+" Data= "+values[i][j]+" Counter= "+counter);
 ////////////////////////////////
+    				    // if counter = 4 return true  
+    				    if(counter >= 4) {
+    				    	return true;
+    				    }
+    				   
     			  }
     		  }
+    		  //reset counter for next row
+    		  counter = 0;
     	  }
-      }   
-    if(counter >= 4) {
-    	return true;
-    }
+      }
+
     counter = 0;
     
     // Check columns
-    
+    for (int i =0; i < numberOfRows;i++ ){
+  	  for(int j = 0 ;j < numberOfColumns; j++ ) {
+  		  //if to prevent out of index exception
+  		  if ((j+1) < numberOfColumns) {
+  			  //if current value = next value in row counter++
+  			  if (values[j][i]==values[j+1][i]) {
+  				  counter++;
+///////////////////////Debugging
+  				  System.out.println("Flag2"+" i= "+i+" j= "+j+" Data= "+values[i][j]+" Counter= "+counter);
+////////////////////////////////
+  				  // if counter = 4 return true  
+  				  if(counter >= 4) {
+  				  	return true;
+  				  }
+  			  }
+  		  }
+  		  //reset counter for next row
+  		  counter = 0;
+  	  }
+    }
+  
+  counter = 0;
     
     
   
