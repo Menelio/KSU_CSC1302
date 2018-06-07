@@ -1,18 +1,20 @@
 package mod1;
 
+import java.util.Scanner;
+
 public class Lab_5_Menelio {//PatternRecognistion_2DimMain
   public static void main(String[] args) {
-/*    int[][] board = {
-        {0, 1, 0, 6, 1, 6, 1},
-        {0, 1, 6, 8, 6, 0, 1},
-        {5, 2, 2, 1, 8, 2, 9},
-        {6, 5, 6, 1, 1, 2, 1},
-        {6, 9, 6, 2, 1, 9, 1},
-        {3, 5, 9, 1, 3, 1, 1},
-        {6, 5, 6, 3, 1, 9, 3},
-        {1, 3, 6, 1, 9, 0, 7}    
-    }; */
-    
+	  
+	  /*Test array
+	  int[][] board = {
+		        {9, 5, 0, 0, 9},
+		        {9, 7, 0, 1, 0},
+		        {0, 0, 1, 0, 0},
+		        {6, 1, 0, 1, 0},
+		        {1, 0, 0, 0, 1},
+		     
+	  };*/
+	  //code to  Manually enter an array
     java.util.Scanner input = new java.util.Scanner(System.in);
     System.out.print("Enter the number of rows: ");
     int numberOfRows = input.nextInt();
@@ -21,11 +23,6 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     
     int[][] board = new int[numberOfRows][numberOfColumns];
     
-//////////////////////Debugging    
-    System.out.println("\n number of rows "+ (board.length));
-    System.out.println("\n number of column "+ (board[0].length)+"\n");
-///////////////////////
-    
     System.out.println("Enter the array values: ");
     for (int i = 0; i < board.length; i++) {
     	for (int j = 0; j < board[i].length; j++) {
@@ -33,6 +30,8 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     		board[i][j] = input.nextInt();
     	}
     }
+    
+	  
     //print out array
     System.out.println();
     for(int i = 0; i < board.length;i++) {
@@ -46,7 +45,10 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
   }
 
   public static boolean isConsecutiveFour(int[][] values) {
-    int numberOfRows = (values.length);
+    //test Scanner
+	 Scanner step = new Scanner(System.in);
+	  
+	int numberOfRows = (values.length);
     int numberOfColumns = (values[0].length);
 	//counter for number of consecutive numbers
     int counter=0;
@@ -61,7 +63,7 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     				  counter++;
     				    // if counter = 4 return true  
     				    if(counter >= 3) {
-    				    	System.out.println("Flag 1");
+    				    
     				    	return true;
     				    }    				   
     			  }
@@ -70,9 +72,7 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
     	//reset counter for next row
 		  counter = 0;
       }
-
     counter = 0;
-    
     // Check columns
     for (int i =0; i < numberOfRows;i++ ){
   	  for(int j = 0 ;j < numberOfColumns; j++ ) {
@@ -83,7 +83,7 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
   				  counter++;
   				  // if counter = 4 return true  
   				  if(counter >= 3) {
-  					System.out.println("Flag 2");
+  					
   				  	return true;
   				  }
   			  }
@@ -92,82 +92,53 @@ public class Lab_5_Menelio {//PatternRecognistion_2DimMain
   	  //reset counter for next row
   	  counter = 0;
     }
-    
-    counter = 0;
-    
-    
-  
-   // Get a column into an array
-     
-      
-      
-      
-          
-           
-   //check NW diagonal
+    //reset counter to 0
+    counter = 0;         
+   //check NW->SE diagonal
     outerFor:
     for(int i = 0; i <= numberOfRows;i++) {
 	   innerFor:
-	   for(int j =0; j <= numberOfColumns;i++) {
-		   //if there aren't enough rows above break innerFor and move on to next row
-		   if((i+3) > numberOfRows) {
-			   break innerFor;
+	   for(int j =0; j <= numberOfColumns;j++) {
+		  
+		   //if there aren't enough rows blow break outerFor and move on to next row
+		   if( (i+3) >= numberOfRows) {
+			   
+			   break outerFor;
+			   
 		   }
 		   //if there aren't enough columns to the right break innerFor and move on to next row
-		   if ((j+3) > numberOfColumns) {
-			   break outerFor;
+		   if ( (j+3) >= numberOfColumns) {
+			   
+			   break innerFor;
 		   }
 		   //check values[i][j] for NW diagonal
 		   if(values[i][j]==values[i+1][j+1]&& values[i][j]==values[i+2][j+2]&&values[i][j]==values[i+3][j+3]) {
-			   System.out.println("Flag 3");
+			 
 			   return true; 
 		   }
+		
 	   }
    }
-   
-   
-  //check NE diagonal
+  //check NE->SW diagonal
     outerFor:
-    for(int i = (numberOfRows-1); i >= 0;i--) {
-	   innerFor:
-	   for(int j =(numberOfColumns-1); j >= 0;i--) {
-		   //if there aren't enough rows above break innerFor and move on to next row
-		   if((i-3) < 0) {
-			   break innerFor;
-		   }
-		   //if there aren't enough columns to the right break innerFor and move on to next row
-		   if ((j-3) < 0) {
-			   break outerFor;
-		   }
-		   //check values[i][j] for NW diagonal
-		   if(values[i][j]==values[i-1][j-1]&& values[i][j]==values[i-2][j-2]&&values[i][j]==values[i-3][j-3]) {
-			   System.out.println("Flag 3");
-			   return true; 
-		   }
-	   }
-   }
-   
-       
-    // Check major diagonal (upper part)
-   
-   
-   
-   
-   
-   
-   
-   
-    // Check sub-diagonal (left part)
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    // Check sub-diagonal (right part)
+        for(int i = 0; i < numberOfRows;i++) {
+    	   innerFor:
+    	   for(int j =0; j < numberOfColumns;j++) {
+    		  
+    		   //if there aren't enough rows below break outerFor and move on to next row
+    		   if( (i+3) >= numberOfRows) {
+    			   break outerFor;
+    		   }
+    		   //if there aren't enough columns to the left break innerFor and move on to next row
+    		   
+    		   //check values[i][j] for NW diagonal
+    		   if( !((j-3) < 0) &&values[i][j]==values[i+1][j-1]&& values[i][j]==values[i+2][j-2]&&values[i][j]==values[i+3][j-3]) {
+    			  
+    			   return true; 
+    		   }
+    		   
+    	   }
+       } 
     return false;
   }
 }
