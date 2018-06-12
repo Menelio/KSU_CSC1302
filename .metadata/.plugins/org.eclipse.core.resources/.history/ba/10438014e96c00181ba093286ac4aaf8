@@ -1,0 +1,10 @@
+package mod1;
+
+public class Scratch {
+	
+	int[]  a = new int[10];
+	private void sysout() {
+		// TODO Auto-generated method stub
+
+	}
+}
