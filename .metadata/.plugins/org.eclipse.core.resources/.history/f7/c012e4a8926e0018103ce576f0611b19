@@ -1,0 +1,25 @@
+package mod2;
+
+import java.sql.Date;
+
+public class test {
+
+	public static void main(String[] args) {
+		//test Time class
+		Time time = new Time();
+		System.out.println(time.hour+":"+time.getMinute()+":"+time.second);
+		//add five minutes
+		time.setTime(System.currentTimeMillis()+(60*1000*5));
+		System.out.println(time.hour+":"+time.getMinute()+":"+time.second);
+		
+		//test TimeVideoTut Class
+		TimeVideoTut time2 = new TimeVideoTut();
+		System.out.println(time2.hour+":"+time2.getMinute()+":"+time2.second);
+		//add five minutes
+		time.setTime(System.currentTimeMillis()+(60*1000*5));
+		System.out.println(time2.hour+":"+time2.getMinute()+":"+time2.second);
+		
+		 
+	}
+
+}

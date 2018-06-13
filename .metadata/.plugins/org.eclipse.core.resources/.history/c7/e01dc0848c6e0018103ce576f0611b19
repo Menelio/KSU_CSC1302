@@ -1,0 +1,18 @@
+package mod2;
+
+import java.sql.Date;
+
+public class test {
+
+	public static void main(String[] args) {
+		
+		Time time = new Time();
+		TimeVideoTut time2 = new TimeVideoTut();
+		System.out.println(time.hour+":"+time.getMinute()+":"+time.second);
+		System.out.println((System.currentTimeMillis()));
+		System.out.println(time2.getHour());
+		
+		 
+	}
+
+}

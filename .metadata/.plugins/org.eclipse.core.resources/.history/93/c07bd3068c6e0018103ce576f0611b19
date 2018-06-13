@@ -1,0 +1,14 @@
+package mod2;
+
+import java.sql.Date;
+
+public class test {
+
+	public static void main(String[] args) {
+		
+		Time time = new Time();
+		System.out.println(time.hour+":"+time.getMinute()+":"+time.second);
+		 
+	}
+
+}

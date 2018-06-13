@@ -1,0 +1,26 @@
+package mod2;
+
+import java.sql.Date;
+
+public class Time {
+	//class var
+	int hour;
+	int minute;
+	int second;
+	
+	
+	//no args constructor
+	public Time () {
+		//initialize date with current 
+		
+	}
+	
+	//args constructor
+	public Time(long t) {
+		
+	}
+	//method for seting time
+	public void setTime(long t) {
+		
+	}
+}

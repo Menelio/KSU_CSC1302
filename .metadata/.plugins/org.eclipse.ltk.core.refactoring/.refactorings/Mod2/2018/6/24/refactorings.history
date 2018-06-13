@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;mod2.Time&apos; to &apos;TimeVideoTut&apos;&#x0D;&#x0A;- Original project: &apos;Mod2&apos;&#x0D;&#x0A;- Original element: &apos;mod2.Time&apos;&#x0D;&#x0A;- Renamed element: &apos;mod2.TimeVideoTut&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Time&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;mod2{Time.java[Time" matchStrategy="1" name="TimeVideoTut" qualified="false" references="true" similarDeclarations="false" stamp="1528839631357" textual="false" version="1.0"/>
+</session>
