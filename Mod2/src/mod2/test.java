@@ -5,6 +5,7 @@ import java.sql.Date;
 public class test {
 
 	public static void main(String[] args) {
+		
 		//test Time class
 		Time time = new Time();
 		System.out.println("Current time using Time class");
@@ -28,6 +29,14 @@ public class test {
 		MyInteger myInt = new MyInteger(15);
 		System.out.println();
 		System.out.println(myInt.isPrime());
+		
+		//Test PrimeFactor clas
+		System.out.println("Test PrimeFactor class");
+		PrimeFactor primeFactor = new PrimeFactor();
+		primeFactor.findFactors();
+		primeFactor.printOutStack();
+		
+		
 	}
 
 }

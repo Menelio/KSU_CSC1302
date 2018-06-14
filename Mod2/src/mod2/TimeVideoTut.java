@@ -1,3 +1,9 @@
+/**
+ * Mod2 Lab_1 (as done in video walk through)
+ * CSC 1302 M-W 11:00-3:50
+ * Menelio Alvarez 
+ * 6/2/2018
+ * */
 package mod2;
 
 public class TimeVideoTut {
