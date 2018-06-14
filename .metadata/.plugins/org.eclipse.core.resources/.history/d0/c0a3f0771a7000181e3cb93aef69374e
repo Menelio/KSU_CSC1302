@@ -46,6 +46,7 @@ public class PrimeFactor {
 	}
 	//printout all prime factors on stack
 	public void printOutStack() {	
+		
 		System.out.print("Prime factors are: ");
 		int i=0;
 		while(!stack.empty()) {

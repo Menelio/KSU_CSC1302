@@ -50,7 +50,7 @@ public class MyInteger {
 			i++;
 		}
 		//if no number evenly divides value then it is prime
-		
+		System.out.println("flag");
 		return true;
 	}
 	//Static Methods
