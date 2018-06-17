@@ -1,3 +1,9 @@
+/**
+ * Mod2 Lab_2 
+ * CSC 1302 M-W 11:00-3:50
+ * Menelio Alvarez 
+ * 6/16/2018
+ * */
 package mod3;
 
 import java.text.DateFormat;
