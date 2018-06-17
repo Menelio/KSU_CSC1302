@@ -1,9 +1,7 @@
 package mod3;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import java.sql.Date;
+import java.util.Calendar;
 
 public class Employee extends Person {
 	//instance variables
@@ -14,7 +12,7 @@ public class Employee extends Person {
 	public Employee(String name, String email, double salary) {
 		super(name, email);
 		this.salary = salary;
-		this.dateHired = new Date();
+		this.dateHired = (Date) Calendar.getInstance().getTime();
 	}
 	
 	//Getters and setters
@@ -24,12 +22,11 @@ public class Employee extends Person {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	//toString
+
 	@Override
 	public String toString() {
-		return "Employee;" + getName();
+		return "Employee [salary=" + salary + ", dateHired=" + dateHired + "]";
 	}
-
-	
+	 
 	
 }

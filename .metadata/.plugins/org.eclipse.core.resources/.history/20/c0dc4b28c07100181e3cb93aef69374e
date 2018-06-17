@@ -6,14 +6,14 @@ public class Person {
 	String Email;
 	
 	
-	//constructor
+	
 	public Person(String name, String email) {
 		super();
 		this.name = name;
 		Email = email;
 	}
 	
-	//Getters and setters
+	
 	public String getName() {
 		return name;
 	}
@@ -26,12 +26,5 @@ public class Person {
 	public void setEmail(String email) {
 		Email = email;
 	}
-
-	@Override
-	public String toString() {
-		return "Person;" + name;
-	}
-	
-	
 	
 }

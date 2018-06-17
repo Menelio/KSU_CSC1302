@@ -26,12 +26,5 @@ public class Person {
 	public void setEmail(String email) {
 		Email = email;
 	}
-
-	@Override
-	public String toString() {
-		return "Person;" + name;
-	}
-	
-	
 	
 }

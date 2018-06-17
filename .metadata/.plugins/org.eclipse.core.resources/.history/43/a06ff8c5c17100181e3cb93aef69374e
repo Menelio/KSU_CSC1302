@@ -16,13 +16,6 @@ public class Student extends Person {
 	public void setClassStatus(String classStatus) {
 		this.classStatus = classStatus;
 	}
-	//toString
-	@Override
-	public String toString() {
-		return "Student;" + getName();
-	}
-	
-	
 	
 	
 }

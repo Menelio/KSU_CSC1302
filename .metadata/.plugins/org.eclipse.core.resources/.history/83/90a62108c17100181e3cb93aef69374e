@@ -24,12 +24,12 @@ public class Employee extends Person {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	//toString
+
 	@Override
 	public String toString() {
-		return "Employee;" + getName();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		return "Employee [salary=" + salary + ", dateHired=" + dateFormat.format(dateHired)+ "]";
 	}
-
-	
+	 
 	
 }
