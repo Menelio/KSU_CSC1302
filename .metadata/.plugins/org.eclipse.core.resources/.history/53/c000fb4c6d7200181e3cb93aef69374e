@@ -1,5 +1,5 @@
 /**
- * Mod3 Test
+ * Mod2 Lab_2 
  * CSC 1302 M-W 11:00-3:50
  * Menelio Alvarez 
  * 6/16/2018
@@ -21,7 +21,7 @@ public class Test {
 						"\nstaff = "+staff.toString()+
 						"\nfaculty = "+faculty.toString());
 	
-	//test CountWords
+	
 	try {
 		CountWords countWords = CountWords.makeCountWords();
 		
