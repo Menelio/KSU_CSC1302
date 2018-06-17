@@ -1,0 +1,72 @@
+package mod3;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class CountWords {
+	private static final Exception FileNotFoundException = new FileNotFoundException("Specified file cannot be found");
+	//create file object
+	private File file;
+	//Scanner for reading the file Object
+	private Scanner input;
+	//no args constructor
+	private CountWords() {
+		//initialize file
+		file = new File("Gettysburg.txt");
+		//initialize scanner
+		input = createScanner(file);
+	}
+	//args constructor
+	private CountWords(File file) {
+		//initialize file
+		this.file = file;
+		//initialize scanner
+		input = createScanner(file);
+	}
+	/*factory Method for creating CountWords object. This method will be used instead of the Constructor method as
+	 * we only want to create a CountWords object if the specified file exist. If it exist we will invoke args constructor
+	 */
+	public static CountWords makeCountWords(File file)throws Exception {
+		if(file.exists()) {
+			return new CountWords(file);
+		}else {
+			throw FileNotFoundException;
+		}
+				
+	}
+	/*Similar to the factory method above this method will only invoke the no-args constructor if the default file exist 
+	 * "Gettysburg.txt". If "Gettysburg.txt" does not exist it will throw a FileNotFoundException
+	 */
+	public static CountWords makeCountWords()throws Exception {
+		if(new File("Gettysburg.txt").exists()) {
+			return new CountWords();
+		}else {
+			throw FileNotFoundException;
+		}
+				
+	}
+	//Method for creating a Scanner and handling exception
+	private Scanner createScanner(File file) {
+		try {
+			return new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Creation of Scanner threw and exception");
+			e.printStackTrace();
+		}
+		return null;
+	}
+	//Method for counting the words
+	public int count() {
+		//int to hold count
+		int count = 0;
+		//while loop to count number of words
+		while(input.hasNext()) {
+			count++;
+			//increment input position
+			input.next();
+		}
+		//return count
+		return count;
+	}
+}

@@ -16,18 +16,19 @@ public class Test {
 	Staff staff = new Staff("Max", "Max@yahoo.com",50000.00,"Clerk");
 	Faculty faculty = new Faculty("Bob", "Bob@yahoo.com",65000.00,"10:00-12:30");
 	System.out.println("person = "+person.toString()+
-						"\nemployee = "+ employee.toString()+ 
-						"\nstudent = "+student.toString()+
-						"\nstaff = "+staff.toString()+
-						"\nfaculty = "+faculty.toString());
+						"\n employee = "+ employee.toString()+ 
+						"\n student = "+student.toString()+
+						"\n staff = "+staff.toString()+
+						"\n faculty = "+faculty.toString());
 	
-	
+	System.out.println("Flag1");
 	try {
 		CountWords countWords = CountWords.makeCountWords();
-		
 		System.out.println(countWords.count());
 		
 	} catch (Exception e) {
+		System.out.println("Flag2");
+		
 		e.printStackTrace();
 	}
 	
