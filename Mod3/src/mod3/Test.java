@@ -22,14 +22,17 @@ public class Test {
 						"\nfaculty = "+faculty.toString());
 	
 	//test CountWords
+	System.out.println("\nCountWords Test");
 	try {
 		CountWords countWords = CountWords.makeCountWords();
 		
-		System.out.println(countWords.count());
+		System.out.println(" "+countWords.count());
 		
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 	
+	//test CreateDirectory
+	CreateDirectory.makeDir();
 	}
 }

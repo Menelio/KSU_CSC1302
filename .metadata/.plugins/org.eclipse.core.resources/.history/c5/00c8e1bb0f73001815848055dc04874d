@@ -1,0 +1,24 @@
+package mod3;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class CreateDirectory {
+	
+	public static void makeDir() {
+		
+		
+		
+		//prompt user to enter in a dir
+		System.out.println("Enter in directory");
+		//create file object with user input 
+		 File file = new File(new Scanner(System.in).nextLine());
+		 //create dir and print out messages if succeful, of message if not successful
+		 if(file.mkdirs()) {
+			 System.out.println("Dirs made");
+		 }else {
+			 System.out.println("Dirs not made");
+		 }
+		
+	}
+}
