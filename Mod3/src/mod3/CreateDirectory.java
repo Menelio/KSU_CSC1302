@@ -10,7 +10,7 @@ import java.io.File;
 import java.util.Scanner;
 
 public class CreateDirectory {
-	//create only a static class because 
+	//create only a static method because nothing else is needed 
 	public static void makeDir() {
 		//prompt user to enter in a dir
 		System.out.println("Enter in directory");
