@@ -23,13 +23,22 @@ public class PracticeTestAlpha {
 		File answerFile = new File("answer.txt");
 		//main while loop
 		int menu =0;
+		
+		//print out warning and instruction
+		System.out.println("**************WARNING THIS PROGRAM IS INCOMPLETE*************\n"
+				+          "->When entering quistions and anwsers enter in one line\n "
+				+          "  questions an one line question. \n"
+				+ 		   "->On the Main Menu ONLY ENTER INTEGERS OR WILL CRASH");
+		
+		
 		loop:
 		while(true) {
 			//Main Menu
-			System.out.println("Please select one of the following options \n"
-						 + "1) Add quistion \n"
-						 + "2) Take practice test \n"
-						 + "3) Quit");
+			System.out.println("-----------------Main Menu-------------------\n"
+					     	 + "Please select one of the following options \n"
+					     	 + "1) Add quistion \n"
+					     	 + "2) Take practice test \n"
+					     	 + "3) Quit");
 			menu=console.nextInt();
 			console.nextLine();
 			
