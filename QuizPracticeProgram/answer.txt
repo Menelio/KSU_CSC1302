@@ -1,3 +1,29 @@
 1) value-returning method
 2) void method
 3) formal parameters or simply parameters
+4) Abstract
+5) false
+6) Inheritance
+7)  Conventionally, arrows used in a ____ to show inheritance relationships extend from the descendant class and point to the one from which it descends.
+8)extends
+9)Polymorphism, Inheritance, Identity, or Classification
+10)constructor
+11)polymorphism
+12)false
+13)true
+14)A static variable
+15)override
+16)private
+17)inheritance
+18)class
+19)throws, throw
+20)main method.
+21)unchecked exceptions
+22)signature, return
+23)is accessible, isn't private.
+24)completely unrelated.
+25)constructor chaining
+26)Object
+27)GeometricObject
+28)false
+29)subtype, supertype 

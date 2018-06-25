@@ -5,7 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class PracticeTestAlpha {
 
@@ -47,7 +49,7 @@ public class PracticeTestAlpha {
 					addQuestion(questionFile, answerFile, console);
 					break;
 				case 2:
-					takeTest( question, answer,questionFile, answerFile);
+					takeTest( question, answer,questionFile, answerFile,10);
 					System.out.println("\n Please press enter to return to the main menu");
 					console.nextLine();
 					break;
@@ -93,27 +95,49 @@ public class PracticeTestAlpha {
 				e.printStackTrace();
 			}
 	}
-	public static void takeTest(ArrayList question, ArrayList answer, File questionFile, File answerFile) {
+	public static void takeTest(ArrayList question, ArrayList answer, File questionFile, File answerFile,int numOfQ) {
 		//create Scanner to populate arrayList
 		Scanner inputQ = createScanner(questionFile);
 		Scanner inputA = createScanner(answerFile);
 		//populate arrayList with loop
-		int i=0;
 		while(inputQ.hasNextLine()&&inputA.hasNextLine()) {
 			question.add(inputQ.nextLine());
 			answer.add(inputA.nextLine());
 		}
+		//if question and answer don't match in size something went wrong quite
+		if(question.size()!=answer.size()) {
+			System.out.println("question.size()!=answer.size()");
+			System.exit(0);
+		}
 		//pick random int to pick question and answer
 		int QAnum = 0;
-		if(question.size()==answer.size()) {
-			QAnum = (int)(Math.random() * question.size());
+		//array of question numbers to check so there are no repeate questions
+		int[] k = new int[numOfQ];
+
+		//for loop to ask question	
+		for(int i = 0;i<numOfQ;i++) {
+			//gen number and check for repeat
+			genNum:
+			while(true) {
+				check:
+				while(true) {
+					QAnum = (int)(Math.random() * question.size());
+			
+					for(int j=0;j<k.length;j++) {
+						if(k[j]==QAnum) {
+							break check;
+						}
+					}
+					break genNum;
+				}
+				
+			}
+			//print out Q	
+			System.out.println("Question: \n"+question.get(QAnum)+"\n"+ "Press enter to see answer.");
+			//wait for user to hit enter
+			new Scanner(System.in).nextLine();
+			//display answer
+			System.out.println("Answer:\n"+answer.get(QAnum)+"\n");
 		}
-		//print out Q
-		
-		System.out.println("Question: \n"+
-							question.get(QAnum)+"\n"
-							+ "Press enter to see answer.");
-		new Scanner(System.in).nextLine();
-		System.out.println("Answer:\n"+answer.get(QAnum));
 	}
-}
+} 
