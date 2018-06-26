@@ -49,7 +49,7 @@ public class PracticeTestAlpha {
 					addQuestion(questionFile, answerFile, console);
 					break;
 				case 2:
-					takeTest( question, answer,questionFile, answerFile,10);
+					takeTest( question, answer,questionFile, answerFile,20);
 					System.out.println("\n Please press enter to return to the main menu");
 					console.nextLine();
 					break;
@@ -128,6 +128,7 @@ public class PracticeTestAlpha {
 							break check;
 						}
 					}
+					k[i]=QAnum;
 					break genNum;
 				}
 				

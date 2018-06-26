@@ -4,7 +4,7 @@
 4) Abstract
 5) false
 6) Inheritance
-7)  Conventionally, arrows used in a ____ to show inheritance relationships extend from the descendant class and point to the one from which it descends.
+7) UML diagram 
 8)extends
 9)Polymorphism, Inheritance, Identity, or Classification
 10)constructor
@@ -27,3 +27,11 @@
 27)GeometricObject
 28)false
 29)subtype, supertype 
+30)primitive data type values
+31)association
+32)aggregation
+33)composition
+34)formal parameters or simply parameters
+35)actual parameter or argument
+36)variable to reference
+37)ClassNotFoundException, IOException, RuntimeException
