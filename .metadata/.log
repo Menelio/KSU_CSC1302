@@ -770,3 +770,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-06-22 12:45:45.436
 !MESSAGE No repository found at http://download.eclipse.org/releases/junot%20a%20site.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-06-29 12:46:01.929
+!MESSAGE No repository found at http://download.eclipse.org/releases/junot%20a%20site.

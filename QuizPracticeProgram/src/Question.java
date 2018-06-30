@@ -17,9 +17,9 @@ public class Question {
 	//String array for holding possible choices
 	private String[] choices;
 	//correct answer String
-	private String answer;
+	private int answerIndex;
 	//JSON Object
-	private JSONObject qJSON;
+	private static JSONObject qJSON;
 	//question id
 	private String qID;
 	//path
@@ -27,41 +27,50 @@ public class Question {
 	
 	
 	//constructor for creating true or false question
-	public Question(String question,String answer, String qID) throws MissingChoiceException, IOException  {
+	public Question(String question,int answerIndex, String qID) throws MissingChoiceException, IOException  {
 		//set choice to true or false
 		this.choices = new String[]{"True","False"};
 		//test that there is a valid answer
-		if(answer.equalsIgnoreCase(this.choices[0])||answer.equalsIgnoreCase(this.choices[1])) {
+		if(answerIndex < 2) {
 			//initialize class variables
 			this.question = question;
-			this.answer = answer;
+			this.answerIndex = answerIndex;
 			this.qID = qID;
 			//create file from Path and question ID
 			Utils.createFile(path);
+			qJSON= new JSONObject();
 			qJSON = JUtils.getJSONObjectFromFile(path);
 		}else {// if there is no valid answer throw exception
 			throw new MissingChoiceException();
 		}
 	}
 	//constructor for creating a multiple choice question
-	public Question(String question, String[] choices,String answers,String qID) throws MissingChoiceException, IOException {
+	public Question(String question, String[] choices,int answerIndex,String qID) throws MissingChoiceException, IOException {
 		//test that there is a valid answer
-		if(Arrays.asList(choices).contains(answers)) {
+		if(answerIndex <= choices.length) {
 			//initialize class variables
 			this.question = question;
 			this.choices = choices;
-			this.answer = answer;
+			this.answerIndex = answerIndex;
 			this.qID = qID;
 			//create file from Path and question ID
 			Utils.createFile(path);
+			qJSON= new JSONObject();
 			qJSON = JUtils.getJSONObjectFromFile(path);
 		}else {// if there is no valid answer throw exception
 			throw new MissingChoiceException();
 		}
 	}
 	//write question to json
-	private void writeQuetsionToJson() {		
-		//qJSON
+	public void writeQuetsionToJson() {		
+		//write test
+	
+		qJSON.append(qID,choices);
+		qJSON.append(qID,question);
+		qJSON.append(qID,answerIndex);
+		//qJSON.put(qID, answer);
+		
+		JUtils.writeToJSON(path, qJSON);
 		
 	}
 	//getters And setters
@@ -77,8 +86,8 @@ public class Question {
 	public void setChoices(String[] choices) {
 		this.choices = choices;
 	}
-	public void setAnswer(String answer) {
-		this.answer = answer;
+	public void setAnswer(int answerIndex) {
+		this.answerIndex = answerIndex;
 	}
 	public JSONObject getqJSON() {
 		return qJSON;
@@ -86,8 +95,8 @@ public class Question {
 	public void setqJSON(JSONObject qJSON) {
 		this.qJSON = qJSON;
 	}
-	public String getAnswer() {
-		return answer;
+	public int getAnswerIndex() {
+		return answerIndex;
 	}
 	public String getqID() {
 		return qID;
@@ -95,20 +104,5 @@ public class Question {
 	public void setqID(String qID) {
 		this.qID = qID;
 	}
-	//for testing
-	public static void main (String args[]) {
-		Question q;
-		
-		try {
-			q = new Question("ThisIsTheQuestion","False", "thisIsTheID");
-			System.out.println(q.choices[0]);
-			
-			
-			
-		} catch (MissingChoiceException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
+	
 }
