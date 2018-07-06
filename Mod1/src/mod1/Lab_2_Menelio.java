@@ -12,6 +12,7 @@ import java.util.Arrays;
 public class Lab_2_Menelio {
 	
 	public static void main (String[] args) {
+		int x;
 		//initialize array
 		int[] dates = {2683, 2654, 3090, 3325, 4881, 3300, 7456, 3780, 3232, 7270,
 				   7773, 5553, 2850, 7619, 2762, 6965, 4539, 3131, 6066, 5404,
