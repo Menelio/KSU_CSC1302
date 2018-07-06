@@ -1,7 +1,10 @@
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Scanner;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.utils.Utils;
@@ -20,10 +23,37 @@ public class Scratch {
 			//write Question 2
 			q2.writeQuetsionToJson();
 			
+			//retrive question
+			JSONArray qA1 = q1.getqJSON().getJSONArray(q1.getqID());
 			
-			//create a question object from 
+			JSONArray qA2 = q2.getqJSON().getJSONArray(q2.getqID());
+			for(int i =0; i < qA1.length();i++) {
+				System.out.println(qA1.get(i));
+			}
+			System.out.println();
+			for(int i =0; i < qA2.length();i++) {
+				System.out.println(qA2.get(i));
+			}
+			Scanner console = new Scanner(System.in);
+			String test="";
+			while(true) {
+				String buf = console.nextLine();
+				if(buf.equals(":q")||buf.equals(":Q"))break;
+				if(buf.contains(":q")||buf.contains(":Q")) {
+					buf=buf.replace(":q", "");
+					buf=buf.replace(":Q", "");
+					test = test + "\n"+ buf;
+					break;
+				}
+				
+				test = test + "\n"+ buf;
+			}
+			System.out.println(test);
+			
+			
 			
 	}
+	//create Question
 	public static Question createQuestion(String question, String[] choices,int answersIndex,String qID) {
 		try {
 			return new Question(question, choices, answersIndex, qID);	

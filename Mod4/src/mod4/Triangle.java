@@ -1,3 +1,9 @@
+/**
+ * Mod4 Lab_3
+ * CSC 1302 M-W 11:00-3:50
+ * Menelio Alvarez 
+ * 6/30/2018
+ * */
 package mod4;
 
 import java.util.Scanner;
