@@ -2,7 +2,7 @@
  * Lab_2 
  * CSC 1302 M-W 11:00-3:50
  * Menelio Alvarez 
- * 6/2/2018 Merge Test
+ * 6/2/2018 Merge Test1
  * */
 
 package mod1;
@@ -12,6 +12,7 @@ import java.util.Arrays;
 public class Lab_2_Menelio {
 	
 	public static void main (String[] args) {
+		int y;
 		//initialize array
 		int[] dates = {2683, 2654, 3090, 3325, 4881, 3300, 7456, 3780, 3232, 7270,
 				   7773, 5553, 2850, 7619, 2762, 6965, 4539, 3131, 6066, 5404,
