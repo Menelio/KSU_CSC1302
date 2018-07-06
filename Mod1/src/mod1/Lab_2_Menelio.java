@@ -2,7 +2,7 @@
  * Lab_2 
  * CSC 1302 M-W 11:00-3:50
  * Menelio Alvarez 
- * 6/2/2018 Merge Test
+ * 6/2/2018 Merge Test2222222222
  * */
 
 package mod1;
