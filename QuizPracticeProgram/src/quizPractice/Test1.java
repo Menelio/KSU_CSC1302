@@ -1,8 +1,10 @@
+package quizPractice;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Test1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MissingChoiceException, IOException {
 		//Scanner for user input
 		Scanner console = new Scanner(System.in);
 		

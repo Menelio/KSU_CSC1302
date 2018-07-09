@@ -1,3 +1,4 @@
+package quizPractice;
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  *!!!!!!!!!UNFINISHED DO NOT USE!!!!!!!!!!
  *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -44,7 +45,7 @@ public class Question {
 	//write question to json
 	public void writeQuetsionToJson() {		
 		//ArrayList to be written to JSON
-		ArrayList temp = new ArrayList<>();
+		ArrayList<Object> temp = new ArrayList<>();
 		//add question attributes to ArrayList
 		temp.add(question);
 		temp.add(answerIndex);
@@ -55,18 +56,33 @@ public class Question {
 		
 	}
 	//getters And setters
+	/**returns question text
+	 * @return String : question text
+	 * */
 	public String getQuestion() {
 		return question;
 	}
+	/**set the question text
+	 * @param String question : question text
+	 * */
 	public void setQuestion(String question) {
 		this.question = question;
 	}
+	/**returns the question's array of choices
+	 * @return String[] : choices
+	 * */
 	public String[] getChoices() {
 		return choices;
 	}
+	/**sets the question's array of choices
+	 * @param String[] choices : Array of choices
+	 * */
 	public void setChoices(String[] choices) {
 		this.choices = choices;
 	}
+	/**set the array index of the answer
+	 * @param int answerIndedx : index of answer in array of choices
+	 * */
 	public void setAnswer(int answerIndex) {
 		this.answerIndex = answerIndex;
 	}

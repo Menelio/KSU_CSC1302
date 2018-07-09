@@ -1156,3 +1156,6 @@ java.lang.NegativeArraySizeException
 	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:696)
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:379)
 	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-07-06 12:46:16.626
+!MESSAGE No repository found at http://download.eclipse.org/releases/junot%20a%20site.

@@ -1,6 +1,6 @@
 {
  "qIDTest2": [
-  "\n ____ is the principle that allows you to apply your knowledge of a general category to more specific objects",
+  "\n ____ is the principle that allows you to apply your knowledge of a general category \nto more specific objects",
   4,
   [
    "polymorphism",
@@ -9,42 +9,14 @@
    "Inheritance"
   ]
  ],
- "qIDBookQ2": [
-  "\nIf a method does not return a value, it is called a ________________",
-  1,
+ "qIDTest3": [
+  "\n ____ 2 is the principle that allows you to apply your knowledge of a general category \nto more specific objects",
+  4,
   [
-   "void method",
-   "static method",
-   "value-returning method",
-   "private method"
+   "2 polymorphism",
+   "2 encapsulation",
+   "2 identity",
+   "2 Inheritance"
   ]
  ],
- "qIDBookQ3": [
-  "\nThe variables defined in the method header are known as _______________",
-  3,
-  [
-   "actual parameters",
-   "static variables",
-   "formal parameters",
-   ""
-  ]
- ],
- "qIDBookQ1": [
-  "\nIf a method returns a value, it is called a ___________",
-  2,
-  [
-   "void method",
-   "value-returning method",
-   "static method",
-   "private method"
-  ]
- ],
- "qIDTest1": [
-  "\nIf a superclass contains only constructors that require arguments, you do not need to create a subclass constructor.",
-  1,
-  [
-   "false",
-   "true"
-  ]
- ]
 }

@@ -1,3 +1,4 @@
+package quizPractice;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,9 +17,9 @@ public class PracticeTestAlpha {
 		Scanner console = new Scanner(System.in);
 		
 		//ArrayList for questions
-		ArrayList question = new ArrayList<String>();
+		ArrayList<String> question = new ArrayList<String>();
 		//ArrayList for answers
-		ArrayList answer = new ArrayList<String>();
+		ArrayList<String> answer = new ArrayList<String>();
 		//file for questions and its scanner
 		File questionFile = new File("quistions.txt");
 		//file for answers and its scanner
@@ -95,7 +96,7 @@ public class PracticeTestAlpha {
 				e.printStackTrace();
 			}
 	}
-	public static void takeTest(ArrayList question, ArrayList answer, File questionFile, File answerFile,int numOfQ) {
+	public static void takeTest(ArrayList<String> question, ArrayList<String> answer, File questionFile, File answerFile,int numOfQ) {
 		//create Scanner to populate arrayList
 		Scanner inputQ = createScanner(questionFile);
 		Scanner inputA = createScanner(answerFile);

@@ -1,3 +1,4 @@
+package quizPractice;
 import java.util.Scanner;
 
 public class TestProctor {

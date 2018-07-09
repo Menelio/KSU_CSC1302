@@ -1,3 +1,4 @@
+package quizPractice;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -12,24 +13,33 @@ import org.json.JSONObject;
 
 import com.utils.Utils;
 import com.utils.json.JUtils;
-
+/**A Handler Method for Question Class 
+ * @author Menelio M Alvarez Jr
+ * @version .1 7/07/2018
+ * */
 public class QuestionHandler {
 	//ArrayList of question
 	private ArrayList<Question> questionsArray = new ArrayList<Question>();
 	//JSON Object
 	private JSONObject testJSONObject = JUtils.getJSONObjectFromFile("quistions/questions.json");;
-	
+	/**QuestionHandler Constructor
+	 * Contains a try catch which throws a NullPointerException if question 
+	 * JSON is empty and tells user to create one
+	 * Msg : "There are no questions stored you must create one and restart program"
+	 * */
 	public QuestionHandler() {
 		//try to populatePracQArray
 		try{
 			populatePracQArray();
 		//if questions.json is empty catch NullPointerException and call createQuestionfromInput()
 		}catch(NullPointerException e) {
-			System.out.println("There are no questions store you must create one and restart program");
+			System.out.println("There are no questions stored you must create one and restart program");
 			createQuestionfromInput();
 		}
 	}
-	
+	/**Creates a question Objects from question JSON "quistions/questions.json"
+	 *  throws a NullPointerException if questions.json is empty
+	 * */
 	//create question Objects from question JSON "quistions/questions.json" throws a NullPointerException if questions.json is empty
 	public void populatePracQArray() throws NullPointerException  {
 		//get names of questionArguements arrays
@@ -49,13 +59,19 @@ public class QuestionHandler {
 			questionsArray.add(createQuestion(question,choices,answerIndex,names[h]));
 		}
 	}
-	
+	/**Creates a Question 
+	 * @param String question : text of question
+	 * @param String[] choices : array of possible choices
+	 * @param int answerIndex : index of correct answer
+	 * @param String qID : Question ID
+	 * @return Question : Question Object
+	 * */
 	//create Question move this funtionallity out to the class that implements 
 	public static Question createQuestion(String question, String[] choices,int answersIndex,String qID) {
 		try {
 			return new Question(question, choices, answersIndex, qID);	
 		} catch (MissingChoiceException | IOException e) {
-			System.out.println("Creating question, "+qID+", threw an exception. createQuestion() ha returned null");
+			System.out.println("Creating question, "+qID+", threw an exception. createQuestion() has returned null");
 			e.printStackTrace();
 			return null;
 		}
@@ -97,26 +113,34 @@ public class QuestionHandler {
 		createQuestion(question, choices, answerIndex, qID).writeQuetsionToJson();
 		//populatePracQArray();
 	}
+	/**Checks if answer is correct
+	 * @param String aID : Question ID
+	 * @Param int selectedAnswer : answer a
+	 * */
 	//Method for checking if answer is correct
 	public boolean checkAnswer(String qID, int selectedAnswer) {
 		for(int i=0; i<questionsArray.size();i++) {
-			if( ((Question)questionsArray.get(i)).getqID().equals(qID) && ((Question)questionsArray.get(i)).getAnswerIndex()==selectedAnswer ) {
+			if( questionsArray.get(i).getqID().equals(qID) && questionsArray.get(i).getAnswerIndex()==selectedAnswer ) {
 				return true;
 			}
 		}
 		return false;
 	}
+	/**Gets a question at the given index
+	 * @param index : index of question to return
+	 * @return Question : Question Object at given index
+	 * */
 	//for simply returning a question at a particular index
 	public Question getQuestionAtIndex(int index) {
 		return questionsArray.get(index);
 	}
 	//getters and setter
 
-	public ArrayList getQuestionsArray() {
+	public ArrayList<Question> getQuestionsArray() {
 		return questionsArray;
 	}
 
-	public void setQuestionsArray(ArrayList questionsArray) {
+	public void setQuestionsArray(ArrayList<Question> questionsArray) {
 		this.questionsArray = questionsArray;
 	}
 
@@ -127,15 +151,4 @@ public class QuestionHandler {
 	public void setTestJSONObject(JSONObject testJSONObject) {
 		this.testJSONObject = testJSONObject;
 	}
-	/*/for testing
-		public static void main(String args[]) {
-			QuestionHandler p = new QuestionHandler();
-			//p.createQuestionfromInput();
-			for (int i = 0; i<p.questionsArray.size();i++) {
-				Question q =(Question)p.questionsArray.get(i);
-				System.out.println(q.getqID()+"\n"+q.getQuestion()+"\n"+q.getAnswerIndex()+"\n"+Arrays.toString(q.getChoices()));
-				System.out.println();
-			}
-		} 
-		*/
 }

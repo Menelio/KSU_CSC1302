@@ -1,3 +1,4 @@
+package quizPractice;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -13,6 +14,8 @@ import com.utils.json.JUtils;
 public class Scratch {
 
 	public static void main(String[] args) {
+		String s = "e";
+		int n= Integer.parseInt(s);
 		String[] choices1 = {"answer1", "answer2","answer3","answer4"};
 			//create question1
 			Question q1 = createQuestion("Test q1",  choices1, 2, "q1ID");

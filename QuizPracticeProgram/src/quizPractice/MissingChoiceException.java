@@ -1,3 +1,4 @@
+package quizPractice;
 
 public class MissingChoiceException extends Exception {
 	public MissingChoiceException() {
