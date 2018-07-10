@@ -17,7 +17,7 @@ public class Question {
 	//String array for holding possible choices
 	private String[] choices;
 	//correct answer String
-	private int answerIndex;
+	private String correctAnswer;
 	//JSON Object
 	private static JSONObject qJSON;
 	//question id
@@ -26,13 +26,13 @@ public class Question {
 	private static String path = "quistions/questions.json";
 
 	//constructor for creating a multiple choice question
-	public Question(String question, String[] choices,int answerIndex,String qID) throws MissingChoiceException, IOException {
+	public Question(String question, String[] choices,String correctAnswer,String qID) throws MissingChoiceException, IOException {
 		//test that there is a valid answer
-		if(answerIndex <= choices.length) {
+		if(Arrays.asList(choices).contains(correctAnswer)) {
 			//initialize class variables
 			this.question = question;
 			this.choices = choices;
-			this.answerIndex = answerIndex;
+			this.correctAnswer = correctAnswer;
 			this.qID = qID;
 			//create file from Path and question ID
 			Utils.createFile(path);
@@ -48,7 +48,7 @@ public class Question {
 		ArrayList<Object> temp = new ArrayList<>();
 		//add question attributes to ArrayList
 		temp.add(question);
-		temp.add(answerIndex);
+		temp.add(correctAnswer);
 		temp.add(choices);
 		//writer temp To JSON with qID as Key
 		qJSON.put(qID, temp );
@@ -83,8 +83,8 @@ public class Question {
 	/**set the array index of the answer
 	 * @param int answerIndedx : index of answer in array of choices
 	 * */
-	public void setAnswer(int answerIndex) {
-		this.answerIndex = answerIndex;
+	public void setAnswer(String correctAnswer) {
+		this.correctAnswer = correctAnswer;
 	}
 	public JSONObject getqJSON() {
 		return qJSON;
@@ -92,8 +92,8 @@ public class Question {
 	public void setqJSON(JSONObject qJSON) {
 		this.qJSON = qJSON;
 	}
-	public int getAnswerIndex() {
-		return answerIndex;
+	public String getAnswerIndex() {
+		return correctAnswer;
 	}
 	public String getqID() {
 		return qID;
