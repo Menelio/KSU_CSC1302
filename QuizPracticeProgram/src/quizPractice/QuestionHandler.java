@@ -1,15 +1,8 @@
 package quizPractice;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-import com.utils.Utils;
 import com.utils.json.JUtils;
 /**A Handler Method for Question Class 
  * @author Menelio M Alvarez Jr

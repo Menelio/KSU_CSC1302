@@ -1,3 +1,9 @@
+/**
+ * Lab_6.3 exercise 18.36 
+ * CSC 1302 M-W 11:00-3:50
+ * Menelio Alvarez 
+ * 7/5/2018
+ * */
 package mod6;
 
 import javafx.application.Application;
@@ -91,5 +97,8 @@ import javafx.stage.Stage;
 			 }
 		 }
 	 }
+	public static void main(String[] args) {
+			launch(args);
+	}
  }
 

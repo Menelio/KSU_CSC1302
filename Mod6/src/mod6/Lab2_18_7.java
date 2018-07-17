@@ -1,3 +1,9 @@
+/**
+ * Lab_6.2 exercise 18.7 
+ * CSC 1302 M-W 11:00-3:50
+ * Menelio Alvarez 
+ * 7/5/2018
+ * */
 package mod6;
 
 import java.util.Scanner;

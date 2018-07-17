@@ -2,7 +2,6 @@ package quizPractice;
 import java.util.ArrayList;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -49,24 +48,24 @@ public class PracticeTestGui extends Application {
 		Label menuTitle = new Label("Main Menu");
 		Font value= new Font(20);
 		menuTitle.setFont(value);
-		ancPane.setTopAnchor(menuTitle, 25.0);
-		ancPane.setLeftAnchor(menuTitle, 185.0);
+		AnchorPane.setTopAnchor(menuTitle, 25.0);
+		AnchorPane.setLeftAnchor(menuTitle, 185.0);
 		
 		
 		//button to take test and its pos
 		Button takeTest = new Button("Take Test");
-		ancPane.setTopAnchor(takeTest, 100.0);
-		ancPane.setLeftAnchor(takeTest, 200.0);
+		AnchorPane.setTopAnchor(takeTest, 100.0);
+		AnchorPane.setLeftAnchor(takeTest, 200.0);
 		
 		//button to add quistion and its Pos
 		Button addQuistion = new Button("Add Quistion");
-		ancPane.setTopAnchor(addQuistion, 150.0);
-		ancPane.setLeftAnchor(addQuistion, 190.0);
+		AnchorPane.setTopAnchor(addQuistion, 150.0);
+		AnchorPane.setLeftAnchor(addQuistion, 190.0);
 		
 		//Label for no question file
 		Label noQuestionPrompt = new Label(noFilePrompt);
-		ancPane.setTopAnchor(noQuestionPrompt , 75.0);
-		ancPane.setLeftAnchor(noQuestionPrompt , 80.0);
+		AnchorPane.setTopAnchor(noQuestionPrompt , 75.0);
+		AnchorPane.setLeftAnchor(noQuestionPrompt , 80.0);
 		
 		//add nodes to ancPane
 		ancPane.getChildren().add(menuTitle);
@@ -165,23 +164,23 @@ public class PracticeTestGui extends Application {
 		});
 		
 		//add nodes to anchor Pane
-		ancPane.setTopAnchor(gPane, 10.0);
-		ancPane.setLeftAnchor(gPane, 20.0);
+		AnchorPane.setTopAnchor(gPane, 10.0);
+		AnchorPane.setLeftAnchor(gPane, 20.0);
 		ancPane.getChildren().add(gPane);
 		
 		//add next question button
-		ancPane.setBottomAnchor(nxtQuestion, 25.0);
-		ancPane.setRightAnchor(nxtQuestion, 25.0);
+		AnchorPane.setBottomAnchor(nxtQuestion, 25.0);
+		AnchorPane.setRightAnchor(nxtQuestion, 25.0);
 		ancPane.getChildren().add(nxtQuestion);
 		
 		//add check button
-		ancPane.setBottomAnchor(checkBtn, 25.0);
-		ancPane.setRightAnchor(checkBtn, 122.5);
+		AnchorPane.setBottomAnchor(checkBtn, 25.0);
+		AnchorPane.setRightAnchor(checkBtn, 122.5);
 		ancPane.getChildren().add(checkBtn);
 		
 		//add check button
-		ancPane.setBottomAnchor(backToMain, 25.0);
-		ancPane.setRightAnchor(backToMain, 200.0);
+		AnchorPane.setBottomAnchor(backToMain, 25.0);
+		AnchorPane.setRightAnchor(backToMain, 200.0);
 		ancPane.getChildren().add(backToMain);
 	}
 	public  void createQuestion(AnchorPane ancPane) {
@@ -268,7 +267,7 @@ public class PracticeTestGui extends Application {
 					   correctAnswerIndex=i;
 				   }
 			   }
-			qH.createQuestion(qTxt.getText(), choices,choices[correctAnswerIndex] , qIdTextField.getText()).writeQuetsionToJson();	
+			QuestionHandler.createQuestion(qTxt.getText(), choices,choices[correctAnswerIndex] , qIdTextField.getText()).writeQuetsionToJson();	
 			}
 		});
 		//Back to Main Menu Button
@@ -281,68 +280,67 @@ public class PracticeTestGui extends Application {
 		});
 		//add nodes to anchor Pane
 		//qIdLbl
-		ancPane.setTopAnchor(qIdLbl, 20.0);
-		ancPane.setLeftAnchor(qIdLbl, 25.0);
+		AnchorPane.setTopAnchor(qIdLbl, 20.0);
+		AnchorPane.setLeftAnchor(qIdLbl, 25.0);
 		ancPane.getChildren().add(qIdLbl);
 		
 		//qIdTextField
-		ancPane.setTopAnchor(qIdTextField, 40.0);
-		ancPane.setLeftAnchor(qIdTextField, 25.0);
+		AnchorPane.setTopAnchor(qIdTextField, 40.0);
+		AnchorPane.setLeftAnchor(qIdTextField, 25.0);
 		ancPane.getChildren().add(qIdTextField);
 		
 		//qIdLbl
-		ancPane.setTopAnchor(qTxtBox, 65.0);
-		ancPane.setLeftAnchor(qTxtBox, 25.0);
+		AnchorPane.setTopAnchor(qTxtBox, 65.0);
+		AnchorPane.setLeftAnchor(qTxtBox, 25.0);
 		ancPane.getChildren().add(qTxtBox);
 		
 		//qIdTextField
-		ancPane.setTopAnchor(qTxt, 85.0);
-		ancPane.setLeftAnchor(qTxt, 25.0);
+		AnchorPane.setTopAnchor(qTxt, 85.0);
+		AnchorPane.setLeftAnchor(qTxt, 25.0);
 		ancPane.getChildren().add(qTxt);
 		
 		//numChoicesLbl
-		ancPane.setTopAnchor(numChoicesLbl, 185.0);
-		ancPane.setLeftAnchor(numChoicesLbl, 25.0);
+		AnchorPane.setTopAnchor(numChoicesLbl, 185.0);
+		AnchorPane.setLeftAnchor(numChoicesLbl, 25.0);
 		ancPane.getChildren().add(numChoicesLbl);
 		
 		//numChoicesTxtBox
-		ancPane.setTopAnchor(numChoicesTxtBox, 200.0);
-		ancPane.setLeftAnchor(numChoicesTxtBox, 25.0);
+		AnchorPane.setTopAnchor(numChoicesTxtBox, 200.0);
+		AnchorPane.setLeftAnchor(numChoicesTxtBox, 25.0);
 		ancPane.getChildren().add(numChoicesTxtBox);
 		
 		//genChoices
-		ancPane.setTopAnchor(genChoices, 200.0);
-		ancPane.setLeftAnchor(genChoices, 55.0);
+		AnchorPane.setTopAnchor(genChoices, 200.0);
+		AnchorPane.setLeftAnchor(genChoices, 55.0);
 		ancPane.getChildren().add(genChoices);
 		
 		//genChoices
-		ancPane.setTopAnchor(feedBack, 225.0);
-		ancPane.setLeftAnchor(feedBack, 25.0);
+		AnchorPane.setTopAnchor(feedBack, 225.0);
+		AnchorPane.setLeftAnchor(feedBack, 25.0);
 		ancPane.getChildren().add(feedBack);
 		
 		//gPane
-		ancPane.setTopAnchor(gPane, 250.0);
-		ancPane.setLeftAnchor(gPane, 25.0);
+		AnchorPane.setTopAnchor(gPane, 250.0);
+		AnchorPane.setLeftAnchor(gPane, 25.0);
 		ancPane.getChildren().add(gPane);
 		
 		//Save question button
-		ancPane.setTopAnchor(saveQ, 420.0);
-		ancPane.setLeftAnchor(saveQ, 375.0);
+		AnchorPane.setTopAnchor(saveQ, 420.0);
+		AnchorPane.setLeftAnchor(saveQ, 375.0);
 		ancPane.getChildren().add(saveQ);
 		
 		//main menu button
-		ancPane.setTopAnchor(backToMain, 420.0);
-		ancPane.setLeftAnchor(backToMain, 290.0);
+		AnchorPane.setTopAnchor(backToMain, 420.0);
+		AnchorPane.setLeftAnchor(backToMain, 290.0);
 		ancPane.getChildren().add(backToMain);
 		
 		//radioLabel label
-		ancPane.setTopAnchor(RadionInstruction, 275.0);
-		ancPane.setLeftAnchor(RadionInstruction, 200.0);
+		AnchorPane.setTopAnchor(RadionInstruction, 275.0);
+		AnchorPane.setLeftAnchor(RadionInstruction, 200.0);
 		ancPane.getChildren().add(RadionInstruction);
 	}
 	public static void main(String[] args) {
 		launch(args);
-
 	}
 
 }

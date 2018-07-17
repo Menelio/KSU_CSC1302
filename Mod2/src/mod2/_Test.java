@@ -33,7 +33,8 @@ public class _Test {
 		
 		//Test MyInteger
 		System.out.println("Test MyInteger class. Please enter integer");
-		MyInteger myInt = new MyInteger(new Scanner(System.in).nextInt());
+		Scanner scanner = new Scanner(System.in);
+		MyInteger myInt = new MyInteger(scanner.nextInt());
 		System.out.println(".isEven()= "+myInt.isEven());
 		System.out.println(".isOdd()= "+myInt.isOdd());
 		System.out.println(".isPrime()= "+myInt.isPrime());

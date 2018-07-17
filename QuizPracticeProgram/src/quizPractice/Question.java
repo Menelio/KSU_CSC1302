@@ -3,7 +3,7 @@ package quizPractice;
  *!!!!!!!!!UNFINISHED DO NOT USE!!!!!!!!!!
  *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  * */
-import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -90,7 +90,7 @@ public class Question {
 		return qJSON;
 	}
 	public void setqJSON(JSONObject qJSON) {
-		this.qJSON = qJSON;
+		Question.qJSON = qJSON;
 	}
 	public String getAnswerIndex() {
 		return correctAnswer;

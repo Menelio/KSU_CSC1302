@@ -1,0 +1,37 @@
+1) If a method returns a value, it is called a ___________
+2) If a method does not return a value, it is called a ________________
+3) The variables defined in the method header are known as _______________
+4) A subclass is required to override methods that are declared ____ in the superclass.
+5)  If a superclass contains only constructors that require arguments, you do not need to create a subclass constructor.
+6) ____ is the principle that allows you to apply your knowledge of a general category to more specific objects.
+7)Conventionally, arrows used in a ____ to show inheritance relationships extend from the descendant class and point to the one from which it descends.
+8)You use the keyword ____ to achieve inheritance in Java.
+9)If a programming language does not support ____, the language is not considered objectoriented.
+10)When you create a class and do not provide a(n) ____, Java automatically supplies you with a default one
+11)The term ____________________ means "many forms".
+12)Java's Math class is an example of a protected class.
+13)A class diagram consists of a rectangle divided into three sections
+14)An attribute that is shared by all objects of the class is coded using ________.
+15)When you implement a method that is defined in a superclass, you __________ the original method
+16)What modifier should you use on a variable so that it can only be referenced inside its defining class?
+17)Object-oriented programming allows you to derive new classes from existing classes. This is called ____________
+18)An object is an instance of a ________ .
+19)The keyword for declaring an exception is _____, and the keyword for throwing an exception is ______.
+20)If an exception is not caught in the current method, it is passed to its caller. The process is repeated until the exception is caught or passed to the__________.
+21)Exceptions occur during the execution of a method. RuntimeException and Error are ______________.
+22)To override a method, the method must be defined in the subclass using the same _________ and the same ______ type as in its superclass.
+23)An instance method can be overridden only if it _________.
+24)If a method defined in a subclass is private in its superclass, the two methods are______
+25)Constructing an instance of a class invokes the constructors of all the superclasses along the inheritance chain, this is called ___________
+26)Object o = new GeometricObject(); What is o's declared type?
+27)26) Object o = new GeometricObject(); What is o's actual type?
+28)Java allows for multiple inheritance, true of false?
+29)Therefore, you can say that Circle is a _______ of GeometricObject and GeometricObject is a _________ for Circle.
+30)By using a wrapper class, you can process ___________ as objects
+31) A student taking a course is an of a(n) ________type relationship between the Student class and the Course class
+32) ___________ is a special form of association that represents an ownership relationship between two objects.
+33)If an object is exclusively owned by an aggregating object, the relationship between the object and its aggregating object is referred to as a ___________
+34) The variables defined in the method header are known as______________
+35) When a method is invoked and you pass a value to the parameter, this value is referred to as a(n) _____________
+36)To use an array in a program, you must declare a _____________ the array and specify the array’s element type
+37)Three classes that extend the exception class_____________

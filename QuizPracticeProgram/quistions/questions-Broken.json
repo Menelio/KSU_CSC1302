@@ -1,0 +1,60 @@
+{
+ "BookPg506": [
+  "An interface is a class-like construct that contains only ________________________.",
+  "constants and abstract methods",
+  [
+   "private variables",
+   "static variables and methods",
+   "constants and abstract methods",
+   "public static methods"
+  ]
+ ],
+ "BookPg500.4": [
+  "A class that contains abstract methods must be ________.",
+  "abstract",
+  [
+   "concrete",
+   "private",
+   "abstract",
+   "static"
+  ]
+ ],
+ "BookPg500.3": [
+  "An abstract class cannot be instantiated using the new operator, but you\ncan still define its constructors, which are invoked in the constructors \nof its subclasses.",
+  "True",
+  [
+   "True",
+   "False"
+  ]
+ ],
+ "BookPg500.2": [
+  "An abstract method cannot be contained in a _________ class.",
+  "nonabstract",
+  [
+   "private",
+   "nonabstract",
+   "subclass",
+   "static"
+  ]
+ ],
+ "BookPg496": [
+  "An abstract class can contain abstract methods, which are implemented in\n______________.",
+  "concrete subclasses",
+  [
+   "abstract subclasses",
+   "concrete subclasses",
+   "its superclass",
+   "private classes"
+  ]
+ ],
+ "BookPg498": [
+  "A class that contains abstract methods must be defined\nas __________.",
+  "abstract ",
+  [
+   "static",
+   "private ",
+   "public",
+   "abstract "
+  ]
+ ], 
+}

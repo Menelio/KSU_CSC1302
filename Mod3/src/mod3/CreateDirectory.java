@@ -10,12 +10,14 @@ import java.io.File;
 import java.util.Scanner;
 
 public class CreateDirectory {
+	private static Scanner scanner;
+
 	//create only a static method because nothing else is needed 
 	public static void makeDir() {
 		//prompt user to enter in a dir
 		System.out.println("Enter in directory");
-		//create file object with user input 
-		 File file = new File(new Scanner(System.in).nextLine());
+		scanner = new Scanner(System.in);
+		File file = new File(scanner.nextLine());
 		 //create dir and print out messages if successful, or message if not successful
 		 if(file.mkdirs()) {
 			 System.out.println("Directory made");
